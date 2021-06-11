@@ -56,6 +56,7 @@ class ImageConfusionMatrix:
             plt.figure(num=titles[type])
             for file_num in range(0,len(file_set)):
                 I = cv2.imread(os.path.join(self.path, file_set[file_num]))
+                I = cv2.cvtColor(I, cv2.COLOR_BGR2RGB)
 
                 if I.shape[0] > 200:
                     percent_redux = round(200 / I.shape[0], 2)
